@@ -214,9 +214,9 @@ document.getElementById("ambience-select").addEventListener("change", (e) => {
 });
 
 // Model loading
-const loader = new GLTFLoader().setPath("models/");
+const loader = new GLTFLoader();
 loader.load(
-	"bugis-v4.glb",
+	"models/bugis-v4.glb",
 	(gltf) => {
 		const mesh = gltf.scene;
 
@@ -240,6 +240,8 @@ loader.load(
 	(xhr) => {
 		document.getElementById("progress").innerHTML = `LOADING ${Math.max(xhr.loaded / xhr.total, 1) * 100
 			}/100`;
+	},(error) => {
+	    	console.error('Error loading model:', error);
 	}
 );
 
