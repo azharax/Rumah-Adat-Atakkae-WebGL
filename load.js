@@ -216,7 +216,7 @@ document.getElementById("ambience-select").addEventListener("change", (e) => {
 // Model loading
 const loader = new GLTFLoader().setPath("models/");
 loader.load(
-	"bugis-v3.glb",
+	"bugis-v4.glb",
 	(gltf) => {
 		const mesh = gltf.scene;
 
